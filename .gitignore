@@ -1,0 +1,21 @@
+# 本地敏感信息（切勿提交）
+MCP token/
+MCP token.txt
+*.token
+
+# 临时与缓存
+_tmp/
+__pycache__/
+*.pyc
+
+# 工作区记忆（本地保留，不入公开仓库）
+.workbuddy/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 生成物（可重新生成）
+data/抽取候选.json
