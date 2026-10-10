@@ -70,11 +70,13 @@ pip install Pillow      # 仅图片优化脚本需要
 ```bash
 python scripts/抽取入库.py --apply    # 抽取并合并入库（按 ext_key 去重，可重复执行）
 python scripts/计算稀缺度.py           # 状态判定 + 稀缺度打分
-python scripts/生成档案页.py           # 生成 视图/藏品档案.html
+python scripts/生成档案页.py           # 生成 index.html（成品页面）
 python scripts/校验藏品库.py           # 数据校验
 ```
 
-打开 `视图/藏品档案.html` 即可查看图鉴与榜单，页面内可**一键导出榜单海报**。
+直接双击 `index.html` 即可查看图鉴与榜单，页面内可**一键导出榜单海报**。
+
+在线浏览：**https://geraltxu233.github.io/mcd-merch-archive/**
 
 也可以直接把这个仓库当作 **WorkBuddy Skill** 使用 —— 见 `SKILL.md`。
 
@@ -108,9 +110,8 @@ python scripts/校验藏品库.py           # 数据校验
 │   ├── 补官方图.py              官方页 → 本地图片
 │   ├── 优化藏品图.py            图片压缩
 │   └── 图片索引图.py            拼图辅助定位产品主图
-└── 视图/
-    ├── 藏品档案.html            成品页面（图鉴 + 榜单 + 海报导出）
-    └── 图片/                    本地化的官方产品图
+├── index.html                 成品页面（图鉴 + 榜单 + 海报导出）
+└── 图片/                       本地化的官方产品图
 ```
 
 ### 设计原则

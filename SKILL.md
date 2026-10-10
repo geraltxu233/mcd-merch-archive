@@ -55,7 +55,7 @@ python scripts/合并补录.py
 ### 第 4 步：补官方图（可选）
 
 ```bash
-python scripts/补官方图.py     # 按 id → 官方页映射下载产品图到 视图/图片/
+python scripts/补官方图.py     # 按 id → 官方页映射下载产品图到 图片/
 python scripts/优化藏品图.py    # 缩放到最大 900px 宽并重编码，减小体积
 ```
 
@@ -65,7 +65,7 @@ python scripts/优化藏品图.py    # 缩放到最大 900px 宽并重编码，�
 
 ```bash
 python scripts/计算稀缺度.py                       # 判状态 + 算 SI
-python scripts/生成档案页.py                       # 派生 视图/藏品档案.html
+python scripts/生成档案页.py                       # 派生 index.html（成品页面）
 python scripts/校验藏品库.py                       # 字段/ID/来源校验
 ```
 

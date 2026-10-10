@@ -4,7 +4,7 @@
 单一数据源原则：本脚本只读 data/藏品库.json，输出视图，不反向写库。
 
 用法：python 生成档案页.py
-输出：视图/藏品档案.html
+输出：index.html（仓库根目录，GitHub Pages 直接访问）
 """
 
 import sys
@@ -19,8 +19,7 @@ except Exception:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(ROOT, "data", "藏品库.json")
-OUT_DIR = os.path.join(ROOT, "视图")
-OUT_PATH = os.path.join(OUT_DIR, "藏品档案.html")
+OUT_PATH = os.path.join(ROOT, "index.html")
 
 STATUS_CLASS = {"在售": "s-on", "预热": "s-soon", "售罄": "s-out", "已结束": "s-end", "未知": "s-end"}
 SRC_NAME = {"mcp_calendar": "活动日历", "mcp_mall": "积分商城", "manual": "人工补录"}
@@ -519,7 +518,6 @@ def main():
   </div>
 '''
 
-    os.makedirs(OUT_DIR, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         f.write(head + body + foot)
     print(f"已生成：{OUT_PATH}")

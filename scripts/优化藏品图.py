@@ -1,5 +1,5 @@
 """
-优化藏品图：把 视图/图片/ 下的图片等比缩放到最大宽度 900px 并重编码，减小体积。
+优化藏品图：把 图片/ 下的图片等比缩放到最大宽度 900px 并重编码，减小体积。
 （GIF 保留原样，避免破坏动图。）同步更新藏品库的 image_local 路径。
 
 用法：python 优化藏品图.py
@@ -18,7 +18,7 @@ except Exception:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(ROOT, "data", "藏品库.json")
-IMG_DIR = os.path.join(ROOT, "视图", "图片")
+IMG_DIR = os.path.join(ROOT, "图片")
 MAX_W = 900
 QUALITY = 85
 

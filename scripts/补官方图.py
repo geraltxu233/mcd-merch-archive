@@ -19,7 +19,7 @@ except Exception:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(ROOT, "data", "藏品库.json")
-IMG_DIR = os.path.join(ROOT, "视图", "图片")
+IMG_DIR = os.path.join(ROOT, "图片")
 HDR = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
     "Referer": "https://www.mcdonalds.com.cn/",
@@ -79,7 +79,7 @@ def main():
         if not it:
             print(f"[跳过] 库中无此 id：{iid}")
             continue
-        if it.get("image_local") and os.path.exists(os.path.join(ROOT, "视图", it["image_local"])):
+        if it.get("image_local") and os.path.exists(os.path.join(ROOT, it["image_local"])):
             print(f"[跳过] {it['name']}（本地图已存在）")
             continue
         fn = f"{iid}{ext_of(url)}"
@@ -96,7 +96,7 @@ def main():
         note = it.get("source_raw", "")
         if page not in note:
             it["source_raw"] = note + f" 图片：官方页 {page}"
-        print(f"[完成] {it['name']}  {len(data)//1024}KB  -> 视图/图片/{fn}")
+        print(f"[完成] {it['name']}  {len(data)//1024}KB  -> 图片/{fn}")
 
     with open(DB_PATH, "w", encoding="utf-8") as f:
         json.dump(db, f, ensure_ascii=False, indent=2)
